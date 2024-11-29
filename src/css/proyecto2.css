@@ -217,7 +217,12 @@ img {
 
     padding-top: 1vh;
 }
-
+@font-face {
+    font-family: 'Maiden';
+    src: url('../fonts/maiden.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 .image {
     object-fit: contain;
     padding: 0.2vw;

@@ -238,6 +238,12 @@ img {
     gap: 2vh;
     margin-bottom: 4vh;
 }
+@font-face {
+    font-family: 'Maiden';
+    src: url('../fonts/maiden.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @media (max-width: 425px) {
     .about-section {

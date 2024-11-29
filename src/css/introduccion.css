@@ -5,6 +5,12 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'Maiden';
+    src: url('../fonts/maiden.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -76,7 +82,7 @@ header {
 
 .navbar a {
     font-size: 2vh;
-    font-family: sans-serif;
+    font-family: "maiden",sans-serif;
     font-weight: bold;
     color: white;
     padding: 1vh 2vh;
