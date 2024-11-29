@@ -1,11 +1,14 @@
 /* Estilos generales para el sitio */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 /* --- ENCABEZADO --- */
@@ -16,73 +19,81 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    padding: 1vh 0;
     width: 100%;
-    height: auto;
-    padding: 10px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    align-items: first baseline;
-    justify-items: flex-start;
+    align-items: center;
     width: 100%;
 }
 
 /* --- IMAGEN DE ENCABEZADO (OPCIONAL) --- */
 
 #Logo {
-    align-items: center;
-    gap: 15px;
+    margin-bottom: 1vh;
 }
 
-#Logo img{
-    width: auto;
-    display: block;
+#Logo img {
+    width: 9vh;
 }
- 
- /* --- TITULOS EN ENCABEZADO --- */
 
-#titulo {
-    font-size: 30px;
+/* --- TITULOS EN ENCABEZADO --- */
+
+#titulo h1 {
+    font-size: 2.5vh;
     font-weight: bold;
     color: aquamarine;
+    word-wrap: break-all;
     text-align: center;
 }
 
- .section-titulos {
-    margin-top: 80px;
+.section-title {
+    margin-top: 1vh;
+    word-wrap: break-all;
 }
 
- .navbar {
+.section-titulos {
+    margin-top: 1vh;
+    word-wrap: break-all;
+
+}
+
+.navbar {
     display: flex;
     flex-direction: row;
     list-style-type: none;
+    justify-content: center;
+    gap: 2vh;
+    flex-wrap: wrap;
 }
 
 .navbar a {
-    font-size: 25px;
+    font-size: 2vh;
     color: white;
-    padding: 10px 25px;
+    padding: 1vh 2vh;
     text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition-duration: 0.3s; /* Animation */
+    width: 100%;
 }
 
 .navbar a:hover {
     color: aquamarine;
-    transform: scale(1.2);
+    font-size: 2.5vh;
+    font-weight: bold;
 }
 
 #navbartitle h1 {
-    font-size: 25px; /* Ajusta el tamaño de la animación */
-    color: white; /* Cambia el color según el diseño */
+    font-size: 2.5vh;
+    color: white;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    overflow: visible;
-    opacity: 1;
-    letter-spacing: 2px; /* Espaciado entre letras */
+    letter-spacing: 0.2vh;
     text-transform: uppercase;
+    word-wrap: break-word;
+
 }
 
 /* Botones */
