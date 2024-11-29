@@ -250,3 +250,14 @@ h2 {
     display: inline-block;
     margin-bottom: 2vh;
 }
+
+#Footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2vh 0;
+    background-color: #000000;
+    color: white;
+    font-size: 1.5vh;
+}
