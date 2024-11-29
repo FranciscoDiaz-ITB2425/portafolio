@@ -9,12 +9,15 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-color: #575757ea; /* Color de fondo base */
+    color: #ffffff;
 }
 
 /* --- ENCABEZADO --- */
 
 header {
-    background-color: #0b4246;
+    background-color: #000000;
     color: white;
     display: flex;
     flex-direction: column;
@@ -33,11 +36,11 @@ header {
 /* --- IMAGEN DE ENCABEZADO (OPCIONAL) --- */
 
 #Logo {
-    margin-top: 1.5vh;
+    margin-top: 2vh;
 }
 
 #Logo img {
-    width: 75vh;
+    width: 65vh;
 }
 
 /* --- TITULOS EN ENCABEZADO --- */
@@ -98,7 +101,9 @@ header {
 
 /* --- Estilos para los bloques de contenido en ventana --- */
 #main {
+
     margin: 2vh 10vw;
+
 }
 
 .content-block,
@@ -164,14 +169,15 @@ header {
 
 .language-list span {
     font-weight: bold;
-    color: #333;
-    min-width: 80px;
+    color: #ffffff;
+    font-size: 1.5em;
+    min-width: 8vh;
 }
 
 .language-bar {
     width: 100%;
     height: 10px;
-    background-color: #6d6969;
+    background-color: #dddddd;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -180,11 +186,17 @@ header {
 
 .language-bar .progress {
     height: 100%;
-    background-color: #f69708;
+    background-color: #ff0000;
     border-radius: 20px;
     width: var(--progress-width);
-    animation: grow 1s ease-in-out forwards;
+    animation: grow 3s ease-in-out forwards;
     transition: width 0.3s ease;
+}
+
+.language-level {
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 1.5em;
 }
 
 @keyframes grow {
@@ -326,4 +338,10 @@ img {
     .about-section {
         flex-direction: column;
     }
+}
+
+h2 {
+    border-bottom: 0.4vh solid #ff0000;
+    display: inline-block;
+    margin-bottom: 2vh;
 }
