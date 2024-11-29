@@ -5,20 +5,26 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'Maiden'; /* Choose a name for your font */
+    src: url('../fonts/maiden.ttf') format('truetype'); /* Path to your font file */
+    font-weight: normal; /* Normal weight */
+    font-style: normal; /* Normal style */
+}
+
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.6;
-    background-color: #e5e5f7;
-    opacity: 0.8;
-    background-image:  linear-gradient(30deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(150deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(30deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(150deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777);
-    background-size: 20px 35px;
-    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+    background-color: #f4f4f4;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-color: #575757ea; /* Color de fondo base */
+    color: #ffffff;
 }
 
 /* --- ENCABEZADO --- */
 
 header {
-    background-color: #0b4246;
+    background-color: #000000;
     color: white;
     display: flex;
     flex-direction: column;
@@ -37,11 +43,11 @@ header {
 /* --- IMAGEN DE ENCABEZADO (OPCIONAL) --- */
 
 #Logo {
-    margin-bottom: 1vh;
+    margin-top: 2vh;
 }
 
 #Logo img {
-    width: 9vh;
+    width: 65vh;
 }
 
 /* --- TITULOS EN ENCABEZADO --- */
@@ -76,6 +82,8 @@ header {
 
 .navbar a {
     font-size: 2vh;
+    font-family: 'Maiden', sans-serif;
+    font-weight: bold;
     color: white;
     padding: 1vh 2vh;
     text-decoration: none;
@@ -84,9 +92,14 @@ header {
 }
 
 .navbar a:hover {
-    color: aquamarine;
-    font-size: 2.5vh;
-    font-weight: bold;
+    color: rgb(255, 0, 0); /* Outline color */
+    z-index: -1; /* Send the outline behind the text */
+    font-size: 2em; /* Match the size */
+    text-shadow: 
+        -1px -1px 0 rgb(255, 255, 255),
+        1px -1px 0 rgb(255, 0, 0),
+        -1px 1px 0 rgb(255, 255, 255),
+        1px 1px 0 rgb(255, 0, 0); /* Creates the thick outline */
 }
 
 #navbartitle h1 {
@@ -100,50 +113,140 @@ header {
 
 }
 
-/* Botones */
-
-#prevBtn {
-    left: 10px;
-}
-
-#nextBtn {
-    right: 10px;
-}
-
 /* --- Estilos para los bloques de contenido en ventana --- */
 #main {
-    margin-top: 25px;
-    margin-left: 100px;
-    margin-right: 100px;
+
+    margin: 2vh 10vw;
+
 }
 
-.content-block {
+.content-block,
+.content-block-info {
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    gap: 2vh;
+    margin-bottom: 4vh;
 }
 
-.content-block img {
-    flex: 1;
-    max-width: 250px; /* --- Para cambiar de tamaño su imagen de perfil, modifique este parametro --8 */
-    margin-left: 40px; 
-    margin-right: auto;
-    margin-top: 40px;
-    margin-bottom: auto;
+.content-block img,
+.content-block-info img {
+    max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    object-fit: contain;
+    border-radius: 0.5vh;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para las imágenes */
-img {
-    max-width: 100%; /* Nunca será más grande que su contenedor */
-    height: auto; /* Mantiene la proporción */
-    display: block; /* Elimina espacios blancos alrededor de la imagen */
+/* --- CARRETE DE IMAGENES --- */
+
+#CarouselContainer {
+    padding-top: 1.5vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Footer {
+#Carousel {
+    display: flex;
+    gap: 20px; /* Espacio entre imágenes */
+    animation: slideAnimation 10s linear infinite;
+    transition: transform 0.8s ease;
+}
+
+#Carousel .Slide {
+    flex: 0 0 auto; /* Cada slide ocupa su tamaño natural */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Carousel .Slide img {
+    max-width: 90%; /* Ajusta para que las imágenes no excedan el contenedor */
+    max-height: 500px; /* Limita la altura máxima de las imágenes */
+    width: auto; /* Escala proporcional */
+    height: auto; /* Escala proporcional */
+    border: 2px solid #ccc; /* Opcional: Borde para destacar */
+    border-radius: 10px; /* Opcional: Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: Sombra para estética */
+}
+
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-250%);
+    }
+}
+
+#CarouselContainer:hover #Carousel {
+    animation-play-state: paused;
+}
+
+
+/* --- ESTILOS PARA LAS IMAGENES --- */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- PIE DE PAGINA --- */
+
+#Footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: flex-start;
+    width: 100%;
+    padding: 2vh 0;
+    background-color: #000000;
+    color: white;
+    font-size: 1.5vh;
+}
+
+.container-r {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding-top: 1vh;
+}
+
+.image {
+    object-fit: contain;
+    padding: 0.2vw;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-all;
+    width: 80%;
+    text-align: justify;
+}
+
+.about-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vh;
+    margin-bottom: 4vh;
+}
+
+@media (max-width: 425px) {
+    .about-section {
+        flex-direction: column;
+    }
+}
+
+h2 {
+    border-bottom: 0.4vh solid #ff0000;
+    display: inline-block;
+    margin-bottom: 2vh;
 }
