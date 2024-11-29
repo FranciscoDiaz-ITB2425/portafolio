@@ -83,7 +83,7 @@ header {
 }
 
 .navbar a:hover {
-    color: aquamarine;
+    color: #f23030;
     font-size: 2.5vh;
     font-weight: bold;
 }
@@ -208,6 +208,8 @@ header {
     }
 }
 
+
+/* --- CARRETE DE IMAGENES --- */
 /* --- CARRETE DE IMAGENES --- */
 
 #CarouselContainer {
@@ -215,21 +217,33 @@ header {
     width: 100%;
     overflow: hidden;
     margin-bottom: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #Carousel {
     display: flex;
+    gap: 20px; /* Espacio entre imágenes */
     animation: slideAnimation 10s linear infinite;
     transition: transform 0.8s ease;
 }
 
 #Carousel .Slide {
-    flex: 0 0 100%;
+    flex: 0 0 auto; /* Cada slide ocupa su tamaño natural */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #Carousel .Slide img {
-    width: 100%;
-    height: auto;
+    max-width: 90%; /* Ajusta para que las imágenes no excedan el contenedor */
+    max-height: 500px; /* Limita la altura máxima de las imágenes */
+    width: auto; /* Escala proporcional */
+    height: auto; /* Escala proporcional */
+    border: 2px solid #ccc; /* Opcional: Borde para destacar */
+    border-radius: 10px; /* Opcional: Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: Sombra para estética */
 }
 
 @keyframes slideAnimation {
@@ -237,13 +251,15 @@ header {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-250%);
     }
 }
 
 #CarouselContainer:hover #Carousel {
     animation-play-state: paused;
 }
+
+
 
 /* --- BLOQUE DE CONTACTO --- */
 
@@ -269,7 +285,7 @@ header {
 }
 
 #ContactForm input[type="submit"] {
-    background-color: #0b4246;
+    background-color: #000000;
     color: white;
     border: none;
     cursor: pointer;

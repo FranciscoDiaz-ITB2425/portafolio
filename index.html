@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Portafolio Personal "Nombre"</title>
+    <title>Portafolio Personal "Francisco Alejandro Díaz Encalada"</title>
     <meta charset="UTF-8">
     <meta name="author" content="Nombre">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,91 +68,46 @@
                 </nav>
             </section>
         
-            <section class="sections">
-                <h2 class="section-title">Idiomas</h2>
-                <nav class="language-list">
-                    <div class="language-item">
-                        <span>Catalán</span>
-                        <div class="language-bar">
-                            <div class="progress" style="--progress-width: 50%;"></div>
-                        </div>
-                        <div class="language-level">B1</div>
-                    </div>
-                
-                    <div class="language-item">
-                        <span>Español</span>
-                        <div class="language-bar">
-                            <div class="progress" style="--progress-width: 80%;"></div>
-                        </div>
-                        <div class="language-level">Nativo</div>
-                    </div>
-                
-                    <div class="language-item">
-                        <span>Inglés</span>
-                        <div class="language-bar">
-                            <div class="progress" style="--progress-width: 70%;"></div>
-                        </div>
-                        <div class="language-level">B2</div>
-                    </div>
-                
-                    <div class="language-item">
-                        <span>Ruso</span>
-                        <div class="language-bar">
-                            <div class="progress" style="--progress-width: 20%;"></div>
-                        </div>
-                        <div class="language-level">A1</div>
-                    </div>
-            </section>
-
             <section id="CarouselContainer">
                 <div id="Carousel">
                     <div class="Slide">
-                        <img src="./images/pexels-photo-270557.jpeg"
-                        alt= "Image 1">                
-                    <div class="Caption">
+                        <img src="./src/images/SERVER1.jpg" alt="Image 1">
+                        <div class="Caption"></div>
                     </div>
-                </div>
-                
-                <div class="Slide">
-                    <img src="./images/pexels-photo-574071.jpeg" 
-                    alt="Image 2"
-                    title="Proyecto Ejemplo"/>
-                    <div class="Caption">
+                    <div class="Slide">
+                        <img src="./src/images/USB.jpg" alt="Image 2" title="Proyecto Ejemplo">
+                        <div class="Caption"></div>
                     </div>
-                </div>
-    
-                <div class="Slide">
-                    <img src="./images/pexels-photo-943101.jpeg"
-                    alt="Image 3">
-                    <div class="Caption">
+                    <div class="Slide">
+                        <img src="./src/images/AMBIENTE_LABORAL.jpg" alt="Image 3">
+                        <div class="Caption"></div>
                     </div>
-                </div>
-    
-                <div class="Slide">
-                    <img src="" alt="Image 4">
-                    <div class="Caption">
+                    <div class="Slide">
+                        <img src="./src/images/placeholder.jpg" alt="Image 4">
+                        <div class="Caption"></div>
                     </div>
                 </div>
             </section>
-    
-            <button id="prevBtn" class="nav-btn">Anterior</button>
-            <button id="nxtBtn" class="nav-btn">Siguiente</button>
         
             <section id="ContactForm">
                 <h2>Contáctese:</h2>
-                    <form action="submit_form.php" method="POST" target="_blank">
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email:</label>
-                        <input type="text" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
-
-                        <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" required></textarea>
-
-                        <input type="submit" value="Enviar">
-                    </form>
+            
+                <form id="contactForm" action="submit_form.php" method="POST" target="_blank">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" 
+                        pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" 
+                        required>
+            
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+            
+                    <input type="submit" value="Enviar">
+                </form>
             </section>
+            
 
             <footer>
                 <div id="Footer">
@@ -160,9 +115,9 @@
                 </div>
             </footer>
         
-            <script src="./src/js/textoparpadeante.js">
-            </script>
             <script src="./src/js/logos.js"></script>
+            <script src="./src/js/checkform.js"></script>
+            <script src="./src/js/scroll.js"></script>
         </div>   
     </body>
 

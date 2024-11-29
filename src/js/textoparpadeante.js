@@ -1,35 +1,21 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const textElement = document.getElementById("animacion-tex");
-    const textArray = ["Xavier Sánchez", "Desarrollador Web", "Diseñador Frontend"];
-    let textIndex = 0;
-    let charIndex = 0;
-    let currentText = "";
-    let isTyping = true;
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    // Obtener los valores de los campos
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-    function typeText() {
-        if (isTyping) {
-            currentText = textArray[textIndex].slice(0, charIndex);
-            textElement.textContent = currentText;
-            charIndex++;
-            if (charIndex > textArray[textIndex].length) {
-                isTyping = false;
-                setTimeout(deleteText, 1000); // Pausa antes de borrar
-            }
+    // Validar si los campos están vacíos
+    if (name === '' || email === '' || message === '') {
+        alert('Por favor, complete todos los campos.');
+        event.preventDefault();  // Detener el envío del formulario
+    } else {
+        // Validación de expresión regular para el correo electrónico
+        const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (!emailPattern.test(email)) {
+            alert('Por favor, ingrese un correo electrónico válido.');
+            event.preventDefault();  // Detener el envío del formulario
+        } else {
+            alert('Formulario enviado correctamente');
         }
     }
-
-    function deleteText() {
-        if (!isTyping) {
-            currentText = textArray[textIndex].slice(0, charIndex);
-            textElement.textContent = currentText;
-            charIndex--;
-            if (charIndex < 0) {
-                textIndex = (textIndex + 1) % textArray.length;
-                charIndex = 0;
-                isTyping = true;
-            }
-        }
-    }
-
-    setInterval(typeText, 150);  // Velocidad de escritura
 });
